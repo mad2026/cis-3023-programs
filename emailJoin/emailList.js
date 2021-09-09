@@ -13,10 +13,9 @@ var validateEmailForm = function() {
 	$("first_name_error").firstChild.nodeValue = "";
 
 	if (emailAddress1 !== emailAddress2) {
-		$("email_address2_error").firstChild.nodeValue = "This entry must equal first entry.";
+		$("email_address2_error").firstChild.nodeValue = "This email must equal first entry.";
 		return false;
 	}
-
 	return true;
 
 };
