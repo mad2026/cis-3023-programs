@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Join Email List</title>
+		<link rel="stylesheet" href="salesTax.css">
+		<script src="salesTax.js"></script>
+	</head>
+	<body>
+		<main>
+			<h1>Sales Tax Calculator</h1>
+			<p>Enter the values below and click "calculate"</p>
+			<form id="sales_form" name="sales_form"  onsubmit="return false" onclick="calculate()"   method="get">
+				<div class = "fields">
+					<label for="subtotal">Subtotal:</label>
+					<input type="number" id="subtotal" name="subtotal" min = "0" placeholder="Sale Total" required>
+					<span id="subtotal_error" class = "blue"></span>
+					<br>
+
+					<label for="tax_rate">Tax Rate:</label>
+					<input type="number" id="tax_rate" name="tax_rate" min = "0"  max = "100" placeholder="Tax Rate" required>
+					<span id="tax_rate_error" class = "blue">%</span>
+					<br>
+
+					<label for="shipping_charges">Shipping Charges:</label>
+					<input type="number" id="shipping_charges" name="shipping_charges" min = "0" placeholder = "Shipping Charges" required>
+					<span id="shipping_charges_error" class = "green"></span>
+					<br>
+
+					<label for="sales_tax">Sales Tax:</label>
+					<input type="number" id="sales_tax" name="sales_tax" disabled = "True" required>
+					<span id="sales_tax_error" class = "blue"></span>
+					<br>
+
+					<label for="total">Total:</label>
+					<input type="number" id="total" name="total" disabled = "True" required>
+					<span id="total_error" class = "blue"></span>
+					<br>
+					
+					<label>&nbsp;</label>
+					<input type="submit" id="calculate" value="calculate" class="input_button">
+				</div>
+			</form>
+		</main>
+	</body>
+</html>
