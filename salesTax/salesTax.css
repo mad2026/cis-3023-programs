@@ -28,11 +28,13 @@ label {
 input {
     margin-left: 1em;
     margin-bottom: .5em;
+    width: 25%;
 }
 input[text]{
     border-style: groove;
     
 }
+
 span {
     color: red;
 }

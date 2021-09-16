@@ -13,18 +13,17 @@
 			<form id="sales_form" name="sales_form"  onsubmit="return false" onclick="calculate()"   method="get">
 				<div class = "fields">
 					<label for="subtotal">Subtotal:</label>
-					<input type="number" id="subtotal" name="subtotal" min = "0" placeholder="Sale Total" required>
-					<span id="subtotal_error" class = "blue"></span>
+					<input type="number" id="subtotal" name="subtotal" min = "0" oninput="if(this.value < 0) this.value = null;" placeholder="value greater than 0" required>
+					<span id="subtotal_error" class = "red">*</span>
 					<br>
 
 					<label for="tax_rate">Tax Rate:</label>
-					<input type="number" id="tax_rate" name="tax_rate" min = "0"  max = "100" placeholder="Tax Rate" required>
+					<input type="number" id="tax_rate" name="tax_rate" min = "0" max = "100" oninput="if(this.value > 100 || this.value < 0) this.value = null;" placeholder="value between 0-100" required>
 					<span id="tax_rate_error" class = "blue">%</span>
 					<br>
-
 					<label for="shipping_charges">Shipping Charges:</label>
-					<input type="number" id="shipping_charges" name="shipping_charges" min = "0" placeholder = "Shipping Charges" required>
-					<span id="shipping_charges_error" class = "green"></span>
+					<input type="number" id="shipping_charges" name="shipping_charges" min = "0" oninput="if(this.value < 0) this.value = null;" placeholder = "value greater than 0" required>
+					<span id="shipping_charges_error" class = "red">*</span>
 					<br>
 
 					<label for="sales_tax">Sales Tax:</label>

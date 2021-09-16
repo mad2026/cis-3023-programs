@@ -17,6 +17,10 @@ var calculate = function() {
 	
 
 };
+
+var maxCheck = function() {
+	if(this.value > 5) this.value = null;
+};
 /*
 var calculate = function()
  {
