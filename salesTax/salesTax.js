@@ -9,27 +9,17 @@ var calculate = function() {
 	var salesTax = $("sales_tax").value;
 	var total = $("total").value;
 
-	salesTax = subtotal * (taxRate/100) + shipping;
-	total = salesTax + subtotal;
-	$("sales_tax").value = salesTax;
-	$("total").value = total;
+	salesTax = subtotal * (taxRate/100);
+	salesTax = parseFloat(salesTax.toFixed(2));
+	total = salesTax + subtotal + shipping;
+	
+	$("sales_tax").value = "$" + salesTax.toFixed(2);
+	$("total").value = "$" + total.toFixed(2);
 	return false;
 	
 
 };
 
-var maxCheck = function() {
-	if(this.value > 5) this.value = null;
-};
-/*
-var calculate = function()
- {
-    floatMonthlyPayment = parseFloat($("monthly_payment").value);
-    intLoanTerm = parseInt($("loan_length").value);
-    floatTotalCost = parseFloat(floatMonthlyPayment * intLoanTerm);  
-    $("total_cost").value = floatTotalCost;
- }
- */
  window.onload = function () 
 {
     $("subtotal").value = "";
