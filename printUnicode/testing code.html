@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Click the button to generate a table for the specified string.</p>
+
+    <button onclick="myFunction()">Run Code</button>
+
+    <pre id="demo"></pre>
+
+    <script>
+        function myFunction() {
+            var text = "Character        Decimal Unicode        Hexadecimal Unicode";
+            let upperAlph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let lowerAlph = "abcdefghijklmnopqrstuvwxyz";
+            var i = 0;
+            while (i < upperAlph.length) {
+                text += "<br> " + upperAlph.charAt(i);
+                text += "                " + upperAlph.charCodeAt(i);
+                text += "                     " + upperAlph.charCodeAt(i).toString(16)
+                i++;
+            }
+            text += "<br> ";
+            var i = 0;
+            while (i < lowerAlph.length) {
+                text += "<br> " + lowerAlph.charAt(i);
+                text += "                " + lowerAlph.charCodeAt(i);
+                text += "                     " + lowerAlph.charCodeAt(i).toString(16)
+                i++;
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+
+</body>
+
+</html>
