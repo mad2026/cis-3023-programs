@@ -5,12 +5,12 @@
 
     <p>Click the button to generate a table decimal / hex conversion table.</p>
 
-    <button onclick="myFunction()">Run Code</button>
+    <button onclick="printUni()">Run Code</button>
 
     <pre id="demo"></pre>
 
     <script>
-        function myFunction() {
+        function printUni() {
             var text = "Character\t\tDecimal Unicode\t\t\tHexadecimal Unicode";
             var upperAlph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var lowerAlph = "abcdefghijklmnopqrstuvwxyz";
@@ -26,6 +26,15 @@
                 + "\t\t\t\t\\u00" + lowerAlph.charCodeAt(i).toString(16)
             }
             document.getElementById("demo").innerHTML = text;
+        }
+        function printRange(start, end) {
+            var output = "Character\t\tDecimal Unicode\t\t\tHexadecimal Unicode";
+            for (var i = 0; i < (end-start); i++) {
+                output += "\n" + String.fromCharCode(i)
+                + "\t\t\t" + String.charCodeAt(i)
+                + "\t\t\t\t\\u00" + String.charCodeAt(i).toString(16)
+            }
+
         }
     </script>
 
