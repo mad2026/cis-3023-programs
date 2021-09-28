@@ -3,7 +3,7 @@
 
 <body>
 
-    <p>Click the button to generate a table for the specified string.</p>
+    <p>Click the button to generate a table decimal / hex conversion table.</p>
 
     <button onclick="myFunction()">Run Code</button>
 
@@ -11,23 +11,19 @@
 
     <script>
         function myFunction() {
-            var text = "Character        Decimal Unicode        Hexadecimal Unicode";
-            let upperAlph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            let lowerAlph = "abcdefghijklmnopqrstuvwxyz";
-            var i = 0;
-            while (i < upperAlph.length) {
-                text += "<br> " + upperAlph.charAt(i);
-                text += "                " + upperAlph.charCodeAt(i);
-                text += "                     " + upperAlph.charCodeAt(i).toString(16)
-                i++;
+            var text = "Character		Decimal Unicode			Hexadecimal Unicode";
+            var upperAlph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var lowerAlph = "abcdefghijklmnopqrstuvwxyz";
+            for (var i = 0; i < upperAlph.length; i++) {
+                text += "\n" + upperAlph.charAt(i);
+                text += "			" + upperAlph.charCodeAt(i);
+                text += "				\\u00" + upperAlph.charCodeAt(i).toString(16)
             }
             text += "<br> ";
-            var i = 0;
-            while (i < lowerAlph.length) {
-                text += "<br> " + lowerAlph.charAt(i);
-                text += "                " + lowerAlph.charCodeAt(i);
-                text += "                     " + lowerAlph.charCodeAt(i).toString(16)
-                i++;
+            for (var i = 0; i < upperAlph.length; i++) {
+                text += "\n" + lowerAlph.charAt(i);
+                text += "			" + lowerAlph.charCodeAt(i);
+                text += "				\\u00" + lowerAlph.charCodeAt(i).toString(16)
             }
             document.getElementById("demo").innerHTML = text;
         }
