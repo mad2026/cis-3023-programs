@@ -3,11 +3,25 @@
 
 <body>
 
-    <p>Click the button to generate a table decimal / hex conversion table.</p>
+    <p>Click the Alphabet Unicode button to generate a table decimal / hex conversion table.</p>
+    <button onclick="printUni()">Run Alphabet Unicode table</button>
+    <br><br>
+    <p>Click the Clear screen button clean the table</p>
 
-    <button onclick="printUni()">Run Code</button>
+    <button onclick="document.getElementById('field1').innerHTML = ''">Clear screen</button>
+    <br><br>
+    <p>Please enter Positive values for both Lower and Upper bounds. The Upper bound must be greater than the Lower
+        bound, and the maximum allowed number is 65,536.</p>
+    <button
+        onclick="printRange(document.getElementById('lowerBoundry').value, document.getElementById('upperBoundry').value)">Run
+        range unicode table</button>
+    <input type="number" id="lowerBoundry" name="lowerBoundry" min="0" max="65536" step="1"
+        oninput="if(this.value < 0 || this.value > 65536) this.value = null;" placeholder="lower Boundry" required>
+    <input type="number" id="upperBoundry" name="upperBoundry" min="0" max="65536" step="1"
+        oninput="if(this.value < 0 || this.value > 65536) this.value = null;" placeholder="upper Boundry" required>
 
-    <pre id="demo"></pre>
+
+    <pre id="field1"></pre>
 
     <script>
         function printUni() {
@@ -16,25 +30,29 @@
             var lowerAlph = "abcdefghijklmnopqrstuvwxyz";
             for (var i = 0; i < upperAlph.length; i++) {
                 text += "\n" + upperAlph.charAt(i)
-                + "\t\t\t" + upperAlph.charCodeAt(i)
-                + "\t\t\t\t\\u00" + upperAlph.charCodeAt(i).toString(16)
+                    + "\t\t\t" + upperAlph.charCodeAt(i)
+                    + "\t\t\t\t\\u00" + upperAlph.charCodeAt(i).toString(16)
             }
             text += "\n\n";
             for (var i = 0; i < upperAlph.length; i++) {
                 text += "\n" + lowerAlph.charAt(i)
-                + "\t\t\t" + lowerAlph.charCodeAt(i)
-                + "\t\t\t\t\\u00" + lowerAlph.charCodeAt(i).toString(16)
+                    + "\t\t\t" + lowerAlph.charCodeAt(i)
+                    + "\t\t\t\t\\u00" + lowerAlph.charCodeAt(i).toString(16)
             }
-            document.getElementById("demo").innerHTML = text;
+            document.getElementById("field1").innerHTML = text;
         }
         function printRange(start, end) {
-            var output = "Character\t\tDecimal Unicode\t\t\tHexadecimal Unicode";
-            for (var i = 0; i < (end-start); i++) {
-                output += "\n" + String.fromCharCode(i)
-                + "\t\t\t" + String.charCodeAt(i)
-                + "\t\t\t\t\\u00" + String.charCodeAt(i).toString(16)
+            if (end <= start) {
+                alert("the Upper bound must be greater than the Lower bound. Please try again");
             }
-
+            else {
+                var output = "Character\t\tDecimal Unicode";
+                for (var i = 0; i < (end - start); i++) {
+                    output += "\n" + String.fromCharCode(start + i)
+                        + "\t\t\t" + (start + i)
+                }
+                document.getElementById("field1").innerHTML = output;
+            }
         }
     </script>
 
