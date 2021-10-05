@@ -48,9 +48,9 @@
             }
             else {
                 var output = "Character\t\tDecimal Unicode";
-                for (var i = 0; i <= (end - start); i++) {
-                    output += "\n" + String.fromCharCode(start + i)
-                        + "\t\t\t" + (start + i)
+                for (var i = start; i <= end; i++) {
+                    output += "\n" + String.fromCharCode(i)
+                        + "\t\t\t" + (i)
                 }
                 document.getElementById("field1").innerHTML = output;
             }
