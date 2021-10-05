@@ -41,16 +41,14 @@
             document.getElementById("field1").innerHTML = text;
         }
         function printRange() {
-            var start = 0
-            var end = 0
-            start = document.getElementById('lowerBoundry').value;
-            end = document.getElementById('upperBoundry').value;
+            start = parseInt(document.getElementById('lowerBoundry').value);
+            end = parseInt(document.getElementById('upperBoundry').value);
             if (end <= start) {
                 alert("the Upper bound must be greater than the Lower bound. Please try again");
             }
             else {
                 var output = "Character\t\tDecimal Unicode";
-                for (var i = 0; i < (end - start); i++) {
+                for (var i = 0; i <= (end - start); i++) {
                     output += "\n" + String.fromCharCode(start + i)
                         + "\t\t\t" + (start + i)
                 }
