@@ -1,9 +1,9 @@
 var $ = function (id) {
 	return document.getElementById(id);
 };
-//variables go here
-var breakValue = "";
+
 for (; breakValue != "EXIT";) {
+	var breakValue = "";
 	var menu = function () {
 		for (; ;) {
 			var menuOption = parseInt(prompt("Menu\n\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exponent\n6. Mean\n7. Quit"));
