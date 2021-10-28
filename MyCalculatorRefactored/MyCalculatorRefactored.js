@@ -1,14 +1,13 @@
 var $ = function (id) {
 	return document.getElementById(id);
 };
-
 for (; breakValue != "EXIT";) {
 	var breakValue = "";
 	var menu = function () {
 		for (; ;) {
 			var menuOption = parseInt(prompt("Menu\n\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exponent\n6. Mean\n7. Quit"));
 			if (!isNaN(menuOption) && menuOption > 0 && menuOption < 8) {
-				return(menuOption);
+				return (menuOption);
 			}
 			alert("Please enter a number 1-7");
 		}//for
