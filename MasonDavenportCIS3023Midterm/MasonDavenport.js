@@ -11,13 +11,19 @@ function insertUnderscore() {
 			alert("Thanks for using the ie checker");
 			break//quit program
 		}
-		
+
 		modifiedString = usrInput;
 		//var re = new RegExp(alphaUpper.charAt(i), 'g');
+		
+		//the line below is to comment out the pretty code
+		/*
+		for (var i = 0; i < alphaUpper.length; i++) {//index through the alphabet
+			modifiedString = modifiedString.replace(alphaUpper.charAt(i), "_" + alphaUpper.charAt(i));
+		}//for
+		//*/
 
-		//for (var i = 0; i < alphaUpper.length; i++) {//index through the alphabet
-			//modifiedString = modifiedString.replace(alphaUpper.charAt(i), "_" + alphaUpper.charAt(i));
-		//}//for
+		//the line below is to comment out that dirty code
+		//*
 
 		//I hate that I had to do it like this....
 		modifiedString = modifiedString.replace(/A/g, "_A");
@@ -46,6 +52,8 @@ function insertUnderscore() {
 		modifiedString = modifiedString.replace(/X/g, "_X");
 		modifiedString = modifiedString.replace(/Y/g, "_Y");
 		modifiedString = modifiedString.replace(/Z/g, "_Z");
+		//*/
+
 		alert(modifiedString);
 
 
