@@ -5,16 +5,17 @@ var main = function () {
 	var longestString = "";
 	var usrInput = "";
 	for (; ;) {
-		var usrInput = prompt("Enter a String to count the unique letters of here or enter '***' to end");
+		var usrInput = prompt("Enter a String to count the unique letters of here or enter '***' to end");//get user input
 		if (usrInput == "***") {
 			break//quit program
 		}//if
-		if (getStrings(usrInput) > getStrings(longestString)) {//only save the highest number of unique lowercase letters
+		if (getStrings(usrInput) > getStrings(longestString)) {//only save the string with the highest number of unique lowercase letters
 			longestString = usrInput;
 		}//if
 	}//for
-	return(longestString);
-}
+	//	return(longestString);
+	alert("the string with the most characters was: \"" + longestString + "\". With a unique count of \"" + getStrings(longestString) + "\".");
+}//main function
 var getStrings = function (usrInput) {
 	var alphaLower = "abcdefghijklmnopqrstuvwxyz"
 	var uniqueCount = 0;
@@ -26,5 +27,4 @@ var getStrings = function (usrInput) {
 	}//for
 	return (uniqueCount);
 }//getStrings function
-
-alert("the string with the most characters was: " + main());
+main();
