@@ -15,14 +15,14 @@ function insertUnderscore() {
 		modifiedString = usrInput;
 		//var re = new RegExp(alphaUpper.charAt(i), 'g');
 		
-		//the line below is to comment out the pretty code
+		//the line below is to comment out the pretty code. add/remove a "/"
 		/*
 		for (var i = 0; i < alphaUpper.length; i++) {//index through the alphabet
 			modifiedString = modifiedString.replace(alphaUpper.charAt(i), "_" + alphaUpper.charAt(i));
 		}//for
 		//*/
 
-		//the line below is to comment out that dirty code
+		//the line below is to comment out that dirty code  add/remove a "/"
 		//*
 
 		//I hate that I had to do it like this....
