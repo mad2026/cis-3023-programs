@@ -13,17 +13,17 @@ function insertUnderscore() {
 		}
 
 		modifiedString = usrInput;
-		//var re = new RegExp(alphaUpper.charAt(i), 'g');
 		
 		//the line below is to comment out the pretty code. add/remove a "/"
-		/*
+		//*
+		//var re = new RegExp(alphaUpper.charAt(i), 'g');
 		for (var i = 0; i < alphaUpper.length; i++) {//index through the alphabet
-			modifiedString = modifiedString.replace(alphaUpper.charAt(i), "_" + alphaUpper.charAt(i));
+			modifiedString = modifiedString.replace(new RegExp(alphaUpper.charAt(i), "g"), "_" + alphaUpper.charAt(i));
 		}//for
 		//*/
 
 		//the line below is to comment out that dirty code  add/remove a "/"
-		//*
+		/*
 
 		//I hate that I had to do it like this....
 		modifiedString = modifiedString.replace(/A/g, "_A");
@@ -67,4 +67,4 @@ function name(str, replaceWhat, replaceTo) {
 	var re = new RegExp(replaceWhat, 'g');
 	return str.replace(re, replaceTo);
 }
-*/
+//*/
