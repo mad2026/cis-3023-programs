@@ -10,7 +10,7 @@ var main = function () {
 	usrArray[3] = 135.75;
 	//*/
 	//alert(arrayAverage(randomArrayGenerator()));
-	alert(runMultiple());
+	(runMultiple());
 }//main function
 
 var runMultiple = function () {
@@ -20,14 +20,15 @@ var runMultiple = function () {
 	var arrayStats = new Array(2);
 	var sumOfAverages = 0;
 	for (var j = 0; j < numTrials; j++) {//index through the array
-		arrayStats = parseFloat(arrayAverage(randomArrayGenerator()));
+		arrayStats = (arrayAverage(randomArrayGenerator()));
 		arraySizeSum += arrayStats[0]
 		sumOfAverages += arrayStats[1]
 	}
 	arrayStats[0] = arraySizeSum/numTrials;
 	arrayStats[1] = sumOfAverages/numTrials;
 	//arrayAverageAverage = sumOfAverages/numTrials;
-	return (arrayStats);
+	alert (arraySizeSum/numTrials);
+	alert (sumOfAverages/numTrials);
 }
 var arrayAverage = function (usrArray) {
 	if (usrArray[1].length == 0) {//checks to make sure the size of the array is not zero
