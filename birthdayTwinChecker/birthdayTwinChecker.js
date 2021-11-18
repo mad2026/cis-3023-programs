@@ -2,6 +2,16 @@ var $ = function (id) {
 	return document.getElementById(id);
 };
 var main = function () {
+	/*
+	var numTrials = parseInt(prompt("Enter the number of trials to run here"));
+	for (var i = 0; i < numTrials; i++) {//run the test the number of times the user requests
+		if (coinIsHead(randomNumGenerator())) {
+			numSuccesses++;
+		}//if
+	}//for
+	var probabilityAverage = numSuccesses / numTrials;
+	alert("Probability of getting a head on a coin toss is: \n" + probabilityAverage.toFixed(4) + "\n after " + numTrials + " trial(s).")
+	//*/
 	alert(arrayMatcher(randomArrayGenerator()));
 }//main function
 var arrayMatcher = function (usrArray) {
