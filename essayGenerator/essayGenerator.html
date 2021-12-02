@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Join Email List</title>
+	<title>Essay Writer</title>
 	<link rel="stylesheet" href="essayGenerator.css">
 	<script src="essayGenerator.js"></script>
 </head>
@@ -11,12 +11,28 @@
 <body>
 	<main>
 		<h1>Average of array</h1>
-		<p>Thank you for using My Array averager, please reload the page if you would like to go again!</p>
-		<button onclick="main()">run main function</button>
+		<table>
+			<td><label for="articles">List Articles:</label><textarea id="articles"
+					placeholder="Enter articles list here" class="wordSource"></textarea></td>
+			<td><label for="prepositions">List Prepositions:</label><textarea id="prepositions"
+					placeholder="Enter prepositions list here" class="wordSource"></textarea></td>
+			<td><label for="nouns">List Nouns:</label><textarea id="nouns"
+					placeholder="Enter nouns list here" class="wordSource"></textarea></td>
+			<td><label for="verbs">List Verbs:</label><textarea id="verbs"
+					placeholder="Enter verbs list here" class="wordSource"></textarea></td>
+			<td><label for="adjectives">List Adjectives:</label><textarea id="adjectives"
+					placeholder="Enter adjectives list here" class="wordSource"></textarea></td>
+		</table>
+		<br>
 
+		<button id="generate" onclick="getArticle()">Generate Essay</button>
+		<br>
+
+		<label>Random Essay:</label>
+		<textarea id="essayOutput"
+					placeholder="essay output shows up here" class="essayOutput" disabled="disabled"></textarea>
 
 		</div>
-		</form>
 	</main>
 </body>
 
