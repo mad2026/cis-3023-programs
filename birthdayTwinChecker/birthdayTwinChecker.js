@@ -12,7 +12,15 @@ var main = function () {
 	var probabilityAverage = numSuccesses / numTrials;
 	alert("Probability of getting a head on a coin toss is: \n" + probabilityAverage.toFixed(4) + "\n after " + numTrials + " trial(s).")
 	//*/
-	alert(arrayMatcher(randomArrayGenerator()));
+	numTrials = parseInt(prompt("How many times would you like to run this? please enter a positive whole number."));
+	for (var i = 0; i < numTrials; i++) {
+		if (arrayMatcher(randomArrayGenerator())) {
+			alert("Birthday twins found!!");
+		}
+		if (!(arrayMatcher(randomArrayGenerator()))) {
+			alert("There are no birthday twins :(");
+		}
+	}
 }//main function
 var arrayMatcher = function (usrArray) {
 	var map = {};
@@ -29,12 +37,12 @@ var arrayMatcher = function (usrArray) {
 
 var randomArrayGenerator = function () {
 	var arraySize = 25;
-	alert(arraySize);
+	//alert(arraySize);
 	var usrArray = new Array(arraySize);
 	for (var i = 0; i < usrArray.length; i++) {//index through the array
 		usrArray[i] = Math.floor(Math.random() * 365) + 1;
 	}//for
-	alert(usrArray);
+	//alert(usrArray);
 	return (usrArray);
 }//randomArrayGenerator function
 
