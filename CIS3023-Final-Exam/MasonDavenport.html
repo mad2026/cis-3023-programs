@@ -19,49 +19,55 @@
 	</main>
 	<script>
 		var main = function () {
-			var deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
+			//var deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
 			//head = 1
 			//tail = 2
-			randomHandGenerator(deck);
 
 			var numSuccesses = 0;
 			var numTrials = parseInt(prompt("Enter the number of trials to run here"));
 			for (var i = 0; i < numTrials; i++) {//run the test the number of times the user requests
-				//if (coinIsHead(randomNumGenerator())) {
-				if (atLeast6SumOn2Dice()) {
+				//if (atLeast6SumOn2Dice()) {
+				if (handContainsTwoAces(randomHandGenerator())) {
 					numSuccesses++;
 				}//if
 			}//for
 			var probabilityAverage = numSuccesses / numTrials;
-			alert("Probability of getting at Least 6 Sum On 2 Dice is: \n" + probabilityAverage.toFixed(4) + "\n after " + numTrials + " trial(s).")
+			alert("Probability of getting at Least 2 Aces in a  hand of 4 is: \n" + probabilityAverage.toFixed(4) + "\n after " + numTrials + " trial(s).")
 		}//main function
 
 
-
-		var atLeast6SumOn2Dice = function () {
-			var die1 = randomNumGenerator();
-			var die2 = randomNumGenerator();
-			return ((die1 + die2) >= 6);
-		}//getAtLeast5Heads10Tosses function
-
 		var handContainsTwoAces = function (hand) {
 			var totalAces = 0;
-			for (var i = 0; i < hand.length; i++) {//run the test the number of times the user requests
-			}
-			if (card == 1) {//checks if the value of randNum is 1, aka heads
-				return (true);
-			}//if
-			return (false);
-		}//coinIsHead function
 
-		var randomHandGenerator = function (deck) {
+			if (hand.includes(1)) {//checks if the hand contains 1, aka Ace of Spades
+				totalAces++;
+			}//if
+			if (hand.includes(14)) {//checks if the hand contains 14, aka Ace of Hearts
+				totalAces++;
+			}//if
+			if (hand.includes(27)) {//checks if the hand contains 27, aka Ace of Diamonds
+				totalAces++;
+			}//if
+			if (hand.includes(40)) {//checks if the hand contains 40, aka Ace of Clubs
+				totalAces++;
+			}//if
+
+
+
+			alert(totalAces + " total ace(s)");
+			return (totalAces >= 2);
+		}//handContainsTwoAces function
+
+		var randomHandGenerator = function () {
 			var hand = new Array(4);
+			var deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
 			for (var i = 0; i < hand.length; i++) {//index through the array
 				hand[i] = deck[Math.floor(Math.random() * deck.length)];
 				deck.splice(hand[i] - 1, 1)
-			}//for			//alert(hand);
+			}//for			//
+			alert("your hand is: " + hand);
 			return (hand);
-
+			
 		}//randomHandGenerator function
 
 
